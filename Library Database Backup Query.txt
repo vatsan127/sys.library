@@ -1,0 +1,30 @@
+Create DATABASE Library;
+use library;
+
+CREATE TABLE `books` (
+  `Book_No` int NOT NULL,
+  `Book_Name` varchar(20) NOT NULL,
+  `Author` varchar(20) NOT NULL,
+  `Publisher` varchar(20) NOT NULL,
+  PRIMARY KEY (`Book_No`)
+);
+
+CREATE TABLE `rent` (
+  `Student_Reg_no` varchar(15) NOT NULL,
+  `Student_Name` varchar(15) DEFAULT NULL,
+  `Book_No` int NOT NULL,
+  `Book_Name` varchar(15) DEFAULT NULL,
+  `Date` varchar(20) DEFAULT NULL,
+  `Status` varchar(15) NOT NULL,
+  `yeardays` int NOT NULL,
+  PRIMARY KEY (`Student_Reg_no`)
+);
+
+CREATE TABLE `students` (
+  `Reg_No` varchar(15) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `Batch` int NOT NULL,
+  `Book_no` int DEFAULT '0',
+  PRIMARY KEY (`Reg_No`),
+  UNIQUE KEY `Students_Reg No_uindex` (`Reg_No`)
+);
